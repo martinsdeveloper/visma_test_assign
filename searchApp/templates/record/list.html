@@ -1,0 +1,46 @@
+{% extends 'record/layout.html' %}
+{% load i18n %}
+
+{% block menu %}
+  <div class="text-center dropdown-menu dropdown-menu-lg dropdown-menu-right">
+    <a href="{% url 'change_language' 'lv' %}">lv</a>
+    <a href="{% url 'change_language' 'en' %}">en</a>
+  </div>
+{% endblock %}
+
+{% block title %}
+  <h2>{% trans 'developed by' %}</h2>
+{% endblock %}
+
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit"> {% trans 'search' %}</button>
+  </form>
+{% endblock %}
+
+{% block list %}
+  {% load static %}
+  <table>
+    <tr>
+      <th> {% trans 'url' %}</th>
+      <th> {% trans 'count' %}</th>
+      <th> {% trans 'keywords' %}</th>
+      <th> {% trans 'searched' %}</th>
+      <th> {% trans 'search updated' %}</th>
+      <th></th>
+    </tr>
+    {% for record in records %}
+      <tr>
+        <td>{{record.url}}</td>
+        <td>{{record.count_of_matches}}</td> 
+        <td>{{record.keywords}}</td> 
+        <td>{{record.created_at}}</td> 
+        <td>{{record.updated_at}}</td>
+        <td><a href="{% url 'delete_search' record.id %}">
+             <img src="{% static 'images/delete.png' %}" alt="X"/> </a></td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
