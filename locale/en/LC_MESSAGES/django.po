@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 16:52+0300\n"
+"POT-Creation-Date: 2022-04-20 15:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,30 +18,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: searchApp/templates/record/list.html:16
+#: searchApp/templates/record/list.html:12
 msgid "developed by"
 msgstr "Code example by: Mārtiņš Dargužis"
 
-#: searchApp/templates/record/list.html:23
+#: searchApp/templates/record/list.html:19
 msgid "search"
 msgstr "Search"
 
-#: searchApp/templates/record/list.html:31 searchApp/views.py:29
+#: searchApp/templates/record/list.html:27 searchApp/views.py:30
 msgid "url"
 msgstr "URL"
 
-#: searchApp/templates/record/list.html:32
+#: searchApp/templates/record/list.html:28
 msgid "count"
 msgstr "Count"
 
-#: searchApp/templates/record/list.html:33 searchApp/views.py:30
+#: searchApp/templates/record/list.html:29 searchApp/views.py:31
 msgid "keywords"
 msgstr "Keywords"
 
-#: searchApp/templates/record/list.html:34
+#: searchApp/templates/record/list.html:30
 msgid "searched"
 msgstr "Searched"
 
-#: searchApp/templates/record/list.html:35
+#: searchApp/templates/record/list.html:31
 msgid "search updated"
 msgstr "Search updated"
+
+#: searchApp/templates/record/list.html:32
+msgid "time_spent"
+msgstr "Time lapsed"

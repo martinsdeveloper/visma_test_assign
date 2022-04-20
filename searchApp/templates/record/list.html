@@ -29,6 +29,8 @@
       <th> {% trans 'keywords' %}</th>
       <th> {% trans 'searched' %}</th>
       <th> {% trans 'search updated' %}</th>
+      <th> {% trans 'time_spent' %}</th>
+      time_spent
       <th></th>
     </tr>
     {% for record in records %}
@@ -38,6 +40,7 @@
         <td>{{record.keywords}}</td> 
         <td>{{record.created_at}}</td> 
         <td>{{record.updated_at}}</td>
+        <td>{{record.time_spent}}</td>
         <td><a href="{% url 'delete_search' record.id %}">
              <img src="{% static 'images/delete.png' %}" alt="X"/> </a></td>
       </tr>

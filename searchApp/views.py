@@ -1,4 +1,5 @@
 from http.client import HTTPResponse
+import time
 from django.shortcuts import render
 
 # Create your views here.
@@ -18,7 +19,9 @@ def search_records(request):
         form = SearchRecordCreateForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
+            start = time.perf_counter()
             post.count_of_matches = find_and_count(request.POST["url"],request.POST["keywords"])
+            post.time_spent = str( time.perf_counter() - start)
             post.created_at = timezone.now()
             post.save()
             return redirect('search_records')
